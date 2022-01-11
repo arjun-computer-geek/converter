@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<h1> Converter</h1>
+	<input id="input1" type="text" />
+	<select id="selectBox1" >
+		<option value="centimeter">centimeter</option>
+		<option value="meter" selected>meter</option>
+		<option value="kilometer">kilometer</option>
+	</select>
+	<input id="input2" type="text" />
+	<select id="selectBox1" >
+		<option value="centimeter" selected>centimeter</option>
+		<option value="meter">meter</option>
+		<option value="kilometer">kilometer</option>
+	</select>
+	<script>
+		const input1 = document.getElementById("input1");
+		const input2 = document.getElementById("input2");
+		input1.addEventListener('input', () => {
+			input2.value = meterToCentimeter(input1.value);
+		})
+		input2.addEventListener('input', () => {
+			input1.value = centimeterToMeter(input2.value);
+		})
+		function meterToCentimeter(m){
+			return m*100;
+		}
+		function centimeterToMeter(cm){
+			return cm / 100;
+		}
+	</script>
+</body>
+</html>
